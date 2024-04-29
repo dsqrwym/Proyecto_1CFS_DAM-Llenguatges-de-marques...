@@ -1,0 +1,85 @@
+/* Estilo para el cuerpo de la página */
+body {
+    height: 100vh; /* Altura del cuerpo igual al 100% del viewport height */
+    width: 100vw; /* Ancho del cuerpo igual al 100% del viewport width */
+    overflow: hidden; /* Ocultar el desbordamiento */
+    display: flex; /* Mostrar como contenedor flexible */
+    align-items: center; /* Centrar verticalmente los elementos hijos */
+    justify-content: center; /* Centrar horizontalmente los elementos hijos */
+}
+
+/* Estilo para la sección del artículo */
+article {
+    display: flex; /* Mostrar como contenedor flexible */
+    align-items: center; /* Centrar verticalmente los elementos hijos */
+    justify-content: center; /* Centrar horizontalmente los elementos hijos */
+    height: 100%; /* Altura del artículo igual al 100% del contenedor padre */
+    width: 100%; /* Ancho del artículo igual al 100% del contenedor padre */
+    background-image: url(img/background0.jpg); /* Imagen de fondo para el artículo */
+    background-size: 100% 100%; /* Ajuste de tamaño de la imagen de fondo */
+    background-position: center; /* Posición de la imagen de fondo en el centro */
+    transition-property: background-image; /* Propiedad de transición para la imagen de fondo */
+    transition-duration: 2s; /* Duración de la transición en segundos */
+    transition-timing-function: ease-in-out; /* Función de temporización de la transición */
+}
+
+/* Estilo para la sección del video */
+#video {
+    overflow: hidden; /* Ocultar el desbordamiento del video */
+    position: absolute; /* Posición absoluta */
+    width: 0; /* Ancho inicial del video */
+    height: 0; /* Altura inicial del video */
+    transition-property: width, height; /* Propiedades de transición para el ancho y la altura */
+    transition-duration: 2s; /* Duración de la transición en segundos */
+    transition-timing-function: ease-in-out; /* Función de temporización de la transición */
+    animation: loopVideo 10s ease-out infinite; /* Animación para el video (bucle infinito) */
+}
+
+/* Estilo al hacer hover en el cuerpo o el video */
+body:hover #video, #video video {
+    width: 100%; /* Ancho del video al 100% al hacer hover */
+    height: 100%; /* Altura del video al 100% al hacer hover */
+}
+
+/* Animación de bucle para el video */
+@keyframes loopVideo {
+    0% {
+        transform: scale(1.0); /* Escala inicial del video */
+        opacity: 1; /* Opacidad inicial del video */
+    }
+    25% {
+        transform: scale(1.15); /* Escala al 25% del bucle */
+        opacity: 0.75; /* Opacidad al 25% del bucle */
+    }
+    50% {
+        transform: scale(1.0); /* Escala al 50% del bucle */
+        opacity: 1; /* Opacidad al 50% del bucle */
+    }
+    75% {
+        transform: scale(1.15); /* Escala al 75% del bucle */
+        opacity: 0.75; /* Opacidad al 75% del bucle */
+    }
+}
+
+/* Estilos para pantallas con un ancho máximo de 1024px */
+@media screen and (max-width: 1024px) {
+    body {
+        height: 100vh; /* Altura del cuerpo igual al 100% del viewport height */
+        width: 100vw; /* Ancho del cuerpo igual al 100% del viewport width */
+        overflow: hidden; /* Ocultar el desbordamiento */
+        align-items: center; /* Centrar verticalmente los elementos hijos */
+        justify-content: center; /* Centrar horizontalmente los elementos hijos */
+        background-image: url(img/XK.jpg); /* Imagen de fondo para el cuerpo en pantallas pequeñas */
+        background-size: cover; /* Ajuste de tamaño de la imagen de fondo */
+        background-position: center; /* Posición de la imagen de fondo en el centro */
+        transition-property: width, height; /* Propiedades de transición para el ancho y la altura */
+        transition-duration: 2s; /* Duración de la transición en segundos */
+        transition-timing-function: ease-in-out; /* Función de temporización de la transición */
+        animation: loopVideo 10s ease-out infinite; /* Animación para el background(bucle infinito) */
+    }
+
+    article {
+        background-repeat: no-repeat; /* No repetir la imagen de fondo en pantallas pequeñas */
+        background-size: 100% auto; /* Ajuste de tamaño de la imagen de fondo en pantallas pequeñas */
+    }
+}

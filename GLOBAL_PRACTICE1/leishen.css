@@ -1,0 +1,196 @@
+body{
+    overflow: hidden;
+    height: 90vh;
+    min-width: 98vw;
+    background: linear-gradient(#00000080 1%, rgba(0,0,0,0.8) 99%);
+    background-image: url(img/leishen_background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: grid; /* Cambiado a grid */
+    grid-template-rows: 12% 80% auto; /* Ajustado para tres filas: encabezado, contenido y pie de página */
+    grid-template-columns: 15% auto; /* Dos columnas: izquierda y derecha */
+    grid-template-areas:
+        "header header"
+        "left right"
+        "footer footer";
+}
+header{
+    grid-area: header;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#top{
+    height: 100%;
+    width: 90%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    justify-content: stretch;
+    background-color: rgb(35,35,35);
+    opacity: 0.8;
+}
+.top{
+    text-align: center;
+    height: 100%;
+    text-shadow: none;
+    transition: text-shadow 1s ease-out;
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #555;
+    background-color: rgb(245,245,245);
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+#left{
+    grid-area: left;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+#left div{
+    width: 100%;
+    overflow: hidden;
+    transition: box-shadow 1s ease;
+}
+.card{
+    height: auto;
+    width: 100%;
+    opacity: 0.8;
+    transition: transform 0.8s cubic-bezier(0.6, -0.28, 0.74, 0.05), opacity 0.8s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+}
+#right{
+    grid-area: right;
+    margin-top: 10%;
+    width: 90%;
+    height: 70%;
+    overflow: auto;
+    background-color: rgb(240,241,245);
+    transition: box-shadow 1s ease;
+    opacity: 0.9;
+}
+#story, #region, #showcase{
+    margin: 1% 1% 1% 1%;
+    padding: 3px 3px 5px 8px;
+    background-color: rgb(250,250,250);
+    text-align: center;
+    border: 3px solid rgb(173,147,136);
+}
+.weapon{
+    height: auto;
+    width: 1em;
+    background-color: #555;
+}
+#map, #showcase div{
+    opacity: 1.111;
+    border: 2px solid rgb(173,147,136);
+    background-color: rgba(245, 245, 245,0.99);
+    height: max-content;
+}
+.map{
+    width: 90%;
+    height: auto;
+}
+ol, #region>ul{
+    border: 2px solid rgb(173,147,136);
+    background-color: rgb(245,245,245);
+    text-align: left;
+}
+li h1, li::marker{
+    background-color: rgb(224,218,211);
+}
+.title{
+    font-size: 2em;
+}
+summary{
+    font-size: 1em;
+    color: black;
+    transition: font-size 0.8s linear(0 0%, 0 1.8%, 0.01 3.6%, 0.03 6.35%, 0.07 9.1%, 0.13 11.4%, 0.19 13.4%, 0.27 15%, 0.34 16.1%, 0.54 18.35%, 0.66 20.6%, 0.72 22.4%, 0.77 24.6%, 0.81 27.3%, 0.85 30.4%, 0.88 35.1%, 0.92 40.6%, 0.94 47.2%, 0.96 55%, 0.98 64%, 0.99 74.4%, 1 86.4%, 1 100%);
+}
+details{
+    font-size: 1em;
+    padding: 3px 3px 5px 8px;
+}
+footer{
+    grid-area: footer;
+    height: max-content;
+    width: 100%;
+    background-color: cornflowerblue;
+    opacity: 0.6;
+    text-align: center;
+}
+.top:hover{
+    text-shadow: 3px 3px 6px #555;
+    background-color: rgb(173,147,136);
+}
+a:active{
+    color: rgba(127, 255, 212, 0.76);
+}
+.card:hover{
+    transform: scale(0.9);
+    box-shadow: 0px 0px 10px 5px #555;
+    opacity: 1;
+}
+.card:not(:hover){
+    transform: scale(0.6);
+}
+summary:hover{
+    color: rgb(173,147,136);
+    font-size: 1.2em;
+}
+#right:hover{
+    box-shadow: 0px 0px 20px 10px #555;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        overflow: visible;
+        background-repeat: repeat-y;
+        grid-template-rows: 12% 50% 30% 8%;
+        grid-template-columns:auto;
+        grid-template-areas:
+        "header"
+        "right"
+        "left"
+        "footer";
+    }
+    a h1{
+        font-size: 15px;
+    }
+    #right {
+        grid-area: right;
+        margin-top: 5%;
+        width: auto;
+        height: auto;
+        overflow: auto;
+        background-color: rgb(240,241,245);
+        transition: box-shadow 1s ease;
+        opacity: 0.9;
+    }
+    #left{
+        grid-area: left;
+        display: grid;
+        grid-template-rows: auto auto;
+    
+    }
+    #left div{
+        width: 100%;
+        overflow: visible;
+        transition: box-shadow 1s ease;
+    }
+    footer{
+        grid-area: footer;
+        bottom: 0;
+        position: fixed;
+        height: max-content;
+        font-size: xx-small;
+        width: 100%;
+        background-color: cornflowerblue;
+        opacity: 0.6;
+        text-align: center;
+    }
+}

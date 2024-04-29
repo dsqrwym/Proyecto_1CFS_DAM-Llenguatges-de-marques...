@@ -1,0 +1,20 @@
+body{
+    overflow: hidden;
+    height: 98dvh;
+    width: 98dvw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+div, video{
+    height: 100%;
+    animation: scaleBig 3s ease-in;
+}
+@keyframes scaleBig {
+    from{
+        transform: scale(1.0);
+    }
+    to{
+        transform: scale(1.3);
+    }    
+}

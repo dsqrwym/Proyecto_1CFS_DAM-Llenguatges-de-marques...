@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css" type="text/css" />
+    <title>Activity 16</title>
+</head>
+<body>
+    <header>
+        <section id="section1">
+            <article><h1>GLOBAL PRACTICE 1</h1></article>
+            <article id="google_translate_element" class="top">
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'en',includedLanguages: 'es,ca,fr,en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true}, 'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            </article>
+        </section>
+    </header>
+    <section id="section2" >
+        <article id="form">
+            <div id="title"><h5>Comment Form</h5></div>
+            <form id="contactform" method="post" action="http://www.formular-chef.de/fc.cgi" enctype="multipart/form-data" name="empfaenger" autocomplete="on">
+                <label for="name" id="Q1">My name is:</label>
+                    <input class="input" type="text" id="A1" name="name" maxlength="30" required autofocus><span></span><br>
+                <label for="email" id="Q2" >My email address is </label>
+                    <input class="input" type="text" id="A2" name="email" required multiple ><span></span><br>
+                <label for="telefono" id="Q3" >My phone number is:</label>
+                    <input class="input" type="tel" id="A3" name="telefono" placeholder="965.639.695" pattern="[0-9]{3}.[0-9]{3}.[0-9]{3}" ><span></span><br>
+                <label for="website" id="Q4" >My website is located at:</label>
+                    <input class="input" type="url" id="A4" name="website" placeholder="http://example.com" ><span></span><br>
+                <label for="password" id="Q5" >Password:</label>
+                    <span><input class="input" type="password" name="password" id="A5" pattern="\S{5,}" required autocomplete="off"><p id="p">(at least 5 characters, not spaces)</p></span>
+                <label for="scale" id="Q6" >On a scale of 1 to 10, my project web design is:</label>
+                    <input type="range" name="scale" id="A6" min="0" max="10" value="5" step="1" ><br><span></span>
+                <label for="date" id="Q7">Date of the comment</label>
+                    <input type="date" name="date" id="A7" required><span></span><br>
+                <label for="receive" id="Q8">I would like to receive announcement regarding the new project</label>
+                    <input type="number" name="receive" id="A8" min="0" max="10"><span></span><br>
+                <label for="Disabled">Disabled comment:</label>
+                    <input type="text" name="Disabled" disabled placeholder="This comment is disabled"><br>
+                <label for="title">Malicious comment on the project: </label>
+                    <input type="text" value="HTML5" readonly><br>
+                <label for="colour">Favorite colour:</label>
+                    <input class="input" type="color" name="colour" id="colour">
+                        <input class="input" type="text" placeholder="#FFFFF" pattern="#(?:[0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})"><span></span><br>
+                <label for="Q5">Do you encounter issues with element aspect ratios?</label> 
+                    <input type="radio" name="YesNo" id="Q5" checked>No
+                    <input type="radio" name="YesNo" id="Q5">Yes <br>
+                <label for="suggests">Add suggestions regarding the projrct</label><br>
+                    <textarea name="subjects" cols="50" rows="5"></textarea><br>
+                <label for="screenshot">To enhance your suggestion, please add a photo: </label>
+                    <input class="button" type="file" name="screenshot" size="1000" accept="image" ><br>
+                <label for="fin">I like this project</label>
+                    <input type="checkbox" name="fin" id="checkbox" value="I liked"><br>
+                <input type="submit" class="button" value="Send Message">
+                <input type="reset" class="button" value="Empty the form">
+            <input type="hidden" name="empfaenger" value="yuzhang5002@163.com" />
+            </form>
+        </article>
+    </section>
+    <footer>
+        <p>Copyright @ DSQRWYM--YUZHANG--永余--BENIDORM</p>
+        <a href="PG0.html">Yu Zhang's project</a>
+    </footer>
+</body>
+</html>
